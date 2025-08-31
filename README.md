@@ -20,3 +20,6 @@ The focus is on design principles, code reusability, and applying OOP paradigms 
 
 
 <img width="895" height="520" alt="image" src="https://github.com/user-attachments/assets/78ca0666-92b7-4662-9add-f84318c7a800" />
+
+
+<img width="684" height="517" alt="image" src="https://github.com/user-attachments/assets/fd78c36c-e68a-4edf-a68a-ac5a1c355ed7" />
