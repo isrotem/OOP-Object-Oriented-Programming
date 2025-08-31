@@ -12,7 +12,7 @@ The focus is on design principles, code reusability, and applying OOP paradigms 
 - Design patterns (e.g., Singleton, Factory, Observer)  
 
 ## 🛠️ Technologies
-- Java (main language of the course)  
+- Java
 - UML diagrams for design planning  
 
 
