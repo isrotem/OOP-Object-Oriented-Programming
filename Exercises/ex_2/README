@@ -1,3 +1,8 @@
+EX2:
+
+The game applies key principles of object-oriented programming — encapsulation, inheritance, and polymorphism — to design a modular and maintainable system.
+It demonstrates clean software architecture combined with engaging gameplay
+
 
 Question 1:
 
@@ -91,3 +96,4 @@ We have not made any changes to the API of part 1.
 It should be noted that we implemented, in part 2,
 the interface of the strategy by class for each strategy.
 We also added additional game objects: BonusLifeHeart, ExtraPaddle, PuckBall.
+
