@@ -1,0 +1,56 @@
+
+
+1. Strategies for each auto player:
+    a. WhateverPlayer:
+
+    For the automatic whatever player the strategy is
+    to randomly choose a cell on the board if it is not occupied.
+
+    b. CleverPlayer:
+
+    The CleverPlayer alternates randomly between two strategies:
+
+        WhateverPlayer's Strategy: Makes a random move by selecting
+        an empty cell on the board without evaluating the game state.
+        GeniusPlayer's Strategy: Selects the first available empty cell
+        on the board in a deterministic manner, starting from the top-left.
+
+        On each turn, the CleverPlayer decides randomly which strategy to use,
+        introducing an element of unpredictability to its gameplay.
+
+    c. GeniusPlayer:
+
+     The GeniusPlayer follows a simple, deterministic strategy.
+     It scans the board sequentially from the top-left corner
+     (row 0, column 0) to the bottom-right corner.
+     It places its mark in the first available (empty) cell and
+     stops searching once a valid move is made.
+
+2. Designing all player classes to implement a shared interface, "Player",
+   provides flexibility. By using a interface, the system can treat all player types
+   (human or automated) uniformly. This ensures that the Game class
+   or any other component can interact with players without
+   knowing their specific implementation details.
+
+   This design is based on:
+
+   a. Polymorphism:
+   one of the core pillars of Object-Oriented Programming.
+   Polymorphism allows different classes to be used through a shared interface,
+   enabling code reuse, easier maintenance, and the ability to extend functionality
+   like: adding new player types without modifying existing code.
+
+   b. Abstraction:
+   By defining a shared interface "Player",
+   the implementation details of each player type are hidden from the rest of the system.
+   The Game class only relies on the Player interface, which abstracts how a player's move is executed,
+   whether it is a human player or an AI (e.g., CleverPlayer or GeniusPlayer).
+   It Promotes loose coupling between components, as the Game class doesn't need to know.
+
+   c. Encapsulation:
+   Each player class encapsulates its specific strategy or behavior inside its implementation.
+   The Game class or other parts of the system don't need to access or modify these internal details.
+   It helps to Keep the logic of each player self-contained,
+   making the system easier to understand, test, and maintain.
+
+3. I did not write any additional class.

@@ -1,0 +1,111 @@
+
+The package "trees" was implemented as follows:
+
+1. Classes in the Package:
+
+1.1 Flora:
+    Responsible for managing tree generation within a specific range.
+    Utilizes a probability factor (TREE_PROBABILITY) to determine if a
+    tree should be created at a given location. Maintains a map to track
+    tree existence at specific x-coordinates. Uses createInRange to generate
+    trees between minX and maxX, ensuring they are not out of ground height.
+
+1.2 Tree:
+    Represents a single tree with attributes for its trunk, leaves,
+    and fruits. Manages the creation of the trunk, leaves, and fruits
+    with random values for attributes such as height. Returns sets of leaves,
+    fruits and trunk blocks.
+
+1.3 Leaf:
+    Represents a single leaf on a tree. Designed to add dynamic and
+    realistic movement to leaves by using Transitions.
+
+1.4 Fruit:
+    Represents a fruit on a tree. Interacts with the game environment to
+    increase the avatar’s energy after collision. Re-adds fruits (addFruit)
+    after one day\night cycle.
+
+
+2. Interactions Between Classes:
+
+2.1 Flora manages the creation of Tree objects, passing necessary information
+    such as ground height and randomizer seed, to ensure consistency in tree
+    creation.
+
+2.2 Tree creates and manages its components:
+    The trunk consists of Block objects arranged vertically.
+    The leaves consist of Leaf objects, which include animations
+    for realistic movement.
+    The fruits are managed alongside the leaves and provide energy
+    boosts to the avatar.
+
+2.3 Fruit interacts with the game’s environment and invokes tasks
+    to ensure continuous fruit regeneration.
+
+
+3. Design patterns:
+
+3.1 Composite Pattern:
+    Applied in Tree to manage hierarchical relationships between its
+    components, trunk, leaves, and fruits, treating them as part of a whole.
+
+3.2 Factory Pattern:
+    Applied in Flora class while generating trees using the createInRange
+    method. Based on a random probability and specific parameters, it creates
+    and returns instances of Tree objects. This aligns with the Factory
+    Pattern because the Flora class encapsulates the tree creation logic and
+    provides an interface for creating trees without exposing the
+    instantiation details.
+
+3.3 Observer Pattern:
+    Applied in Fruit class while using the avatarEnergyAdder and fruitRemover
+    consumers to trigger specific actions such as adding energy to the avatar
+    or removing the fruit. This is an example of the Observer Pattern, where
+    Fruit observes avatar interactions and notifies other parts of the system
+    to act accordingly.
+
+We implemented the package "cloud" as follows:
+
+1. Classes in the package:
+
+1.1 Cloud:
+    Represents a cloud in the game, which is made of Blocks. The cloud has a
+    constant pre-determined shape that is identical for every game. Each of
+    the blocks making up the cloud moves across the screen from left to right,
+    starting at a point to the left of the screen border, and ending at a
+    point to the right of it, then returns to the start point and repeats
+    this process. The CreateRain function randomly determines for each block
+    whether rain will be generated at that block's current location or not.
+
+1.2 Rain:
+    Represents a single raindrop. Each raindrop has 2 transitions, which are
+    identical across all raindrops: falling down, and gradually becoming
+    transparent. They are removed from the game once their opacity reaches 0.
+
+2. Interactions between classes:
+
+2.1 Cloud manages creation of Rain objects. Whenever CreateRain is called,
+    some number of Rain objects will be created, and they will each handle
+    their own removal from the game.
+
+
+3. Design patterns:
+
+3.1 Composite Pattern:
+    Applied in Cloud, which is composed of Block components.
+
+3.2 Observer Pattern:
+    Applied in Cloud class while using the CreateRain runnable to trigger
+    rain creation. This is an example of the Observer Pattern, where
+    Cloud observes avatar behaviour and notifies other parts of the system
+    to act accordingly.
+
+ADDITIONAL NOTE: We were unsure as to how the seed should be chosen (defined
+constant? passed as an argument? generated during runtime?) so we decided
+generate a random seed every time the program is run, and use that as the
+constant seed for all the different randomized parts of the program.
+
+
+
+
+

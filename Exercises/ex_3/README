@@ -1,0 +1,76 @@
+
+
+1. ascii_art:
+    AsciiArtAlgorithm - Responsible for a single run of the algorithm.
+    Contains an Image which will be converted to ascii art, and a
+    SubImgCharMatcher which it uses to match characters to sub-images.
+
+    Shell - Interfaces with the user, allowing them to change parameters
+    and run the algorithm. Contains a SubImgCharMatcher, which is used to
+    change the character set.
+
+    OutputFactory - Factory class, used to generate an output method for
+    the shell to use.
+
+    KeyboardInput - responsible for reading input from the  user.
+
+   image:
+    Image - Represents an image, either read from a file or created from
+    an array of pixels.
+
+    ImageManipulator - Pads images, and finds brightnesses of sub images.
+
+   image_char_matching:
+    CharConverter - Converts a character to a 16x16 array of black and white
+    pixels.
+
+    SubImgCharMatcher - Responsible for maintaining the character set, and
+    selecting characters when given brightnesses. Contains a RoundingStrategy
+    which determines how characters are selected.
+
+    brightness_rounding_strategies:
+     RoundingStrategy - Interface representing a rounding method, to select
+     a character when given a brightness.
+
+     RoundUp - Chooses the character with the closest higher brightness.
+
+     RoundDown - Chooses the character with the closest lower brightness.
+
+     RoundAbs - Chooses the character with the closest brightness in either
+     direction.
+
+     RoundingStrategyFactory - Factory class, used to generate rounding
+     strategies.
+
+2. We used several data structures from java's collections:
+    We used a HashMap to store brightnesses for characters we already
+    calculated. This way, if a character is removed from the set and added
+    back later, we can find its brightness in O(1) time on average by finding
+    it in the map, instead of having to recalculate it.
+
+    We used a HashSet to store the character set. This ensures characters
+    don't repeat, and allows us to add and remove characters in O(1) time
+    on average.
+
+    We used a TreeMap to store the normalized brightnesses. This map is sorted
+    by brightness, which allows us to use ceilingEntry and floorEntry to
+    easily and efficiently find the nearest brightnesses in O(log(n)) time.
+
+3. We created CustomException, which extends Exception, to define our own
+   types of exceptions. This allows us to more generally catch CustomException
+   instead of individually catching different types of exceptions, without
+   accidentally catching any unchecked exceptions that our code doesn't know
+   how to handle. For clarity and readability, we created several exception
+   classes that extend CustomException. Each represents a specific error
+   the code might encounter, and is instantiated with the appropriate message.
+
+4. We added 2 public methods to SubImgCharMatcher:
+    ChangeRoundingStrategy - Since we implemented the rounding methods as
+    strategies, we needed to add a method that allows us to change the
+    strategy during runtime.
+
+    GetCharSet - This method allows us to print the current character set and
+    to check its size (to prevent running the algorithm with a small set)
+    without breaking encapsulation.
+
+5. We didn't change the API of any of the other provided classes.
