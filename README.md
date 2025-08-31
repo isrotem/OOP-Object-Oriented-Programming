@@ -1,4 +1,4 @@
- 🧩 Object-Oriented Programming (OOP)
+Object-Oriented Programming (OOP)
 
 This folder contains projects and assignments from the **Object-Oriented Programming** course.  
 The focus is on design principles, code reusability, and applying OOP paradigms in practice.
