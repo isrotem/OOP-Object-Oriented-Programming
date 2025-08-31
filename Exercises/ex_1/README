@@ -1,4 +1,4 @@
-
+EX2:
 
 1. Strategies for each auto player:
     a. WhateverPlayer:
@@ -26,6 +26,7 @@
      It places its mark in the first available (empty) cell and
      stops searching once a valid move is made.
 
+
 2. Designing all player classes to implement a shared interface, "Player",
    provides flexibility. By using a interface, the system can treat all player types
    (human or automated) uniformly. This ensures that the Game class
@@ -52,5 +53,6 @@
    The Game class or other parts of the system don't need to access or modify these internal details.
    It helps to Keep the logic of each player self-contained,
    making the system easier to understand, test, and maintain.
+
 
 3. I did not write any additional class.
