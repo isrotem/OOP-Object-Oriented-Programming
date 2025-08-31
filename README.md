@@ -1,10 +1,13 @@
 Object-Oriented Programming (OOP)
 
+This folder contains projects and assignments from the **Object-Oriented Programming** course.  
+The focus is on design principles, code reusability, and applying OOP paradigms in practice.
+
+
+
 <img width="684" height="517" alt="image" src="https://github.com/user-attachments/assets/fd78c36c-e68a-4edf-a68a-ac5a1c355ed7" />
 
 
-This folder contains projects and assignments from the **Object-Oriented Programming** course.  
-The focus is on design principles, code reusability, and applying OOP paradigms in practice.
 
 ## Topics:
 - Classes, objects, and encapsulation  
