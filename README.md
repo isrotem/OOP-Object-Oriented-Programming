@@ -19,5 +19,4 @@ The focus is on design principles, code reusability, and applying OOP paradigms 
 - UML diagrams for design planning  
 
 
-<img widt<img width="895" height="520" alt="image" src="https://github.com/user-attachments/assets/3582c69c-2c9e-448f-8b0e-d495b2bee65e" />
-h="1477" height="802" alt="image" src="https://github.com/user-attachments/assets/3c4e63c3-e3ad-497b-b316-506fb0d4e1db" />
+<img width="895" height="520" alt="image" src="https://github.com/user-attachments/assets/78ca0666-92b7-4662-9add-f84318c7a800" />
